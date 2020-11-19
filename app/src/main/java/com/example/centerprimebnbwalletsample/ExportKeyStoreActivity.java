@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.centerprime.binance_chain_sdk.BinanceManager;
+import com.centerprime.binance_smart_chain_sdk.BinanceManager;
 import com.example.centerprimebnbwalletsample.databinding.ActivityExportKeystoreBinding;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;

@@ -8,46 +8,36 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.centerprime.binance_smart_chain_sdk.BinanceManager;
-import com.example.centerprimebnbwalletsample.databinding.ActivityCheckBalanceBinding;
+import com.example.centerprimebnbwalletsample.databinding.ActivityErc20TokenBalanceBinding;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class CheckBalanceActivity extends AppCompatActivity {
-    ActivityCheckBalanceBinding binding;
-
+public class CheckERCTokenBalanceActivity extends AppCompatActivity {
+    ActivityErc20TokenBalanceBinding binding;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_check_balance);
-
-        /**
-         * Using this balanceInEth function you can check balance of provided walletAddress.
-         *
-         * @params walletAddress
-         *
-         * @return balance
-         */
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_erc20_token_balance);
 
         BinanceManager binanceManager = BinanceManager.getInstance();
-        //binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
+        // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
         binding.checkBtn.setOnClickListener(v -> {
-            String address = binding.address.getText().toString();
-            if (!address.startsWith("0x")) {
-                address = "0x" + address;
-            }
 
-            binanceManager.getBNBBalance(address)
+            String walletAddress = binding.address.getText().toString().trim();
+            String password = binding.walletPassword.getText().toString().trim();
+            String erc20TokenContractAddress = "TOKEN CONTRACT ADDRESS";
+            binanceManager.getTokenBalance(walletAddress, password, erc20TokenContractAddress, this)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(balance -> {
 
-                        binding.balanceTxt.setText("BNB balance: " + balance.toString());
+                        binding.balanceTxt.setText("Token Balance :" + balance.toString());
+                        Toast.makeText(this, "Token Balance : " + balance, Toast.LENGTH_SHORT).show();
 
                     }, error -> {
                         Toast.makeText(this, error.getMessage(), Toast.LENGTH_SHORT).show();
-
                     });
         });
     }

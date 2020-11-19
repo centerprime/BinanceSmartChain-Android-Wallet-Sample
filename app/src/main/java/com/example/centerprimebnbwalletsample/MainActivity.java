@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         binding.importBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ImportFromKeyStoreActivity.class)));
         binding.importByPrivatekey.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ImportByPrivateKeyActivity.class)));
         binding.sendBNB.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SendBNBActivity.class)));
+        binding.checkERCTokenkBalance.setOnClickListener(v -> { startActivity(new Intent(MainActivity.this, CheckERCTokenBalanceActivity.class)); });
+        binding.sendERCToken.setOnClickListener(v -> { startActivity(new Intent(MainActivity.this, SendERCTokenActivity.class)); });
 
     }
 }
