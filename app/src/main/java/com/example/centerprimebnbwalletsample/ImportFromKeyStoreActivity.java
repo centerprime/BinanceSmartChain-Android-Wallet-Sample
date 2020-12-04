@@ -23,6 +23,14 @@ public class ImportFromKeyStoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_import_keystore);
 
+        /**
+         * Using this importFromKeystore function you can import wallet of provided keystore.
+         *
+         * @params keystore, password, Context
+         *
+         * @return walletAddress
+         */
+
         BinanceManager binanceManager = BinanceManager.getInstance();
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
        // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");

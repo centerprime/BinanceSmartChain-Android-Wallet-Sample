@@ -26,9 +26,9 @@ public class SendBNBActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_send_bnb);
     /**
-     * Using this sendEther function you can send ethereum from walletAddress to another walletAddress.
+     * Using this sendBNB function you can send BNB from walletAddress to another walletAddress.
      *
-     * @params senderWalletAddress, password, gasPrice, gasLimit, etherAmount, receiverWalletAddress, Context
+     * @params senderWalletAddress, password, gasPrice, gasLimit, BNBAmount, receiverWalletAddress, Context
      *
      * @return transactionHash
      */

@@ -25,6 +25,14 @@ public class SendERCTokenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_send_erc20_token);
 
+        /**
+         * Using this sendToken function you can send BNB token from walletAddress to another walletAddress.
+         *
+         * @params senderWalletAddress, password, gasPrice, gasLimit, tokenAmount, receiverWalletAddress, erc20TokenContractAddress, Context
+         *
+         * @return transactionHash
+         */
+
         BinanceManager binanceManager = BinanceManager.getInstance();
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
         // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");

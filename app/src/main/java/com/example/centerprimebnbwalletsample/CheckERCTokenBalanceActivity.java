@@ -20,6 +20,14 @@ public class CheckERCTokenBalanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_erc20_token_balance);
 
+        /**
+         * Using this getTokenBalance function you can check balance of tokenAddress.
+         *
+         * @params walletAddress, password, erc20TokenContractAddress, Context
+         *
+         * @return balance
+         */
+
         BinanceManager binanceManager = BinanceManager.getInstance();
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
         // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
