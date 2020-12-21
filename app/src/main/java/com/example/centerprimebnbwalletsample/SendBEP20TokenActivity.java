@@ -9,21 +9,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.centerprime.binance_smart_chain_sdk.BinanceManager;
-import com.example.centerprimebnbwalletsample.databinding.ActivitySendErc20TokenBinding;
-
+import com.example.centerprimebnbwalletsample.databinding.ActivitySendBep20TokenBinding;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class SendERCTokenActivity extends AppCompatActivity {
-    ActivitySendErc20TokenBinding binding;
+public class SendBEP20TokenActivity extends AppCompatActivity {
+    ActivitySendBep20TokenBinding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_send_erc20_token);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_send_bep20_token);
 
         /**
          * Using this sendToken function you can send BNB token from walletAddress to another walletAddress.
@@ -38,17 +37,17 @@ public class SendERCTokenActivity extends AppCompatActivity {
         // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
         binding.sendERCToken.setOnClickListener(v -> {
 
-            if (!TextUtils.isEmpty(binding.address.getText().toString().trim()) && !TextUtils.isEmpty(binding.ethAmount.getText().toString().trim())
+            if (!TextUtils.isEmpty(binding.address.getText().toString().trim())
+                    && !TextUtils.isEmpty(binding.tokenAmount.getText().toString().trim())
                     && !TextUtils.isEmpty(binding.gasLimit.getText().toString().trim())
                     && !TextUtils.isEmpty(binding.receiverAddress.getText().toString().trim())
                     && !TextUtils.isEmpty(binding.password.getText().toString().trim())) {
 
                 String walletAddress = binding.address.getText().toString();
                 String password = binding.password.getText().toString();
-                //    BigInteger gasPrice = new BigInteger(String.valueOf(ethManager.getGasPrice()));
                 BigInteger gasPrice = new BigInteger("30000000000");
                 BigInteger gasLimit = new BigInteger(binding.gasLimit.getText().toString());
-                BigDecimal tokenAmount = new BigDecimal(binding.ethAmount.getText().toString().trim());
+                BigDecimal tokenAmount = new BigDecimal(binding.tokenAmount.getText().toString().trim());
                 String receiverAddress = binding.receiverAddress.getText().toString().trim();
                 String erc20TokenContractAddress = "TOKEN CONTRACT ADDRESS";
 

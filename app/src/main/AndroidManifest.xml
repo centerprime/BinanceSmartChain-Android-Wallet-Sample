@@ -55,12 +55,12 @@
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".CheckERCTokenBalanceActivity"
+            android:name=".CheckBEP20TokenBalanceActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".SendERCTokenActivity"
+            android:name=".SendBEP20TokenActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             />

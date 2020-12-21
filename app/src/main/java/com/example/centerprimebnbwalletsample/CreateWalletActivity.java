@@ -37,7 +37,8 @@ public class CreateWalletActivity extends AppCompatActivity {
       //  binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
 
         binding.createWallet.setOnClickListener(v -> {
-            if(!TextUtils.isEmpty(binding.password.getText().toString()) && !TextUtils.isEmpty(binding.confirmPassword.getText().toString())
+            if(!TextUtils.isEmpty(binding.password.getText().toString())
+                    && !TextUtils.isEmpty(binding.confirmPassword.getText().toString())
                     && binding.password.getText().toString().equals(binding.confirmPassword.getText().toString())
                     && binding.password.getText().toString().trim().length() >= 6
                     && binding.confirmPassword.getText().toString().trim().length() >= 6) {

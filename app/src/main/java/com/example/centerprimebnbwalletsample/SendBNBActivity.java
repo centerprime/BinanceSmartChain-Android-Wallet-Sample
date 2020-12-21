@@ -39,20 +39,20 @@ public class SendBNBActivity extends AppCompatActivity {
         //binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
 
         binding.sendBNB.setOnClickListener(v -> {
-            if (!TextUtils.isEmpty(binding.address.getText().toString().trim()) && !TextUtils.isEmpty(binding.ethAmount.getText().toString().trim())
+            if (!TextUtils.isEmpty(binding.address.getText().toString().trim())
+                    && !TextUtils.isEmpty(binding.bnbAmount.getText().toString().trim())
                     && !TextUtils.isEmpty(binding.gasLimit.getText().toString().trim())
                     && !TextUtils.isEmpty(binding.receiverAddress.getText().toString().trim())
                     && !TextUtils.isEmpty(binding.password.getText().toString().trim())) {
 
                 String walletAddress = binding.address.getText().toString();
                 String password = binding.password.getText().toString();
-                //    BigInteger gasPrice = new BigInteger(String.valueOf(ethManager.getGasPrice()));
                 BigInteger gasPrice = new BigInteger("30000000000");
                 BigInteger gasLimit = new BigInteger(binding.gasLimit.getText().toString());
-                BigDecimal etherAmount = new BigDecimal(binding.ethAmount.getText().toString().trim());
+                BigDecimal bnbAmount = new BigDecimal(binding.bnbAmount.getText().toString().trim());
                 String receiverAddress = binding.receiverAddress.getText().toString().trim();
 
-                binanceManager.sendBNB(walletAddress, password, gasPrice, gasLimit, etherAmount, receiverAddress, this)
+                binanceManager.sendBNB(walletAddress, password, gasPrice, gasLimit, bnbAmount, receiverAddress, this)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(tx -> {

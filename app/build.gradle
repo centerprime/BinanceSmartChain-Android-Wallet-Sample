@@ -47,7 +47,7 @@ project.ext {
 }
 
 dependencies {
-    implementation 'com.github.centerprime:Binance-SmartChain-Client-SDK:1.0.9'
+    implementation 'com.github.centerprime:Binance-SmartChain-Client-SDK:1.10.0'
     implementation "io.reactivex.rxjava2:rxjava:$project.rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroidVersion"
     implementation 'androidx.appcompat:appcompat:1.2.0'

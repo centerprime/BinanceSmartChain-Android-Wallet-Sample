@@ -22,7 +22,7 @@ public class CheckBalanceActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_check_balance);
 
         /**
-         * Using this balanceInEth function you can check balance of provided walletAddress.
+         * Using this getBNBBalance function you can check balance of provided walletAddress.
          *
          * @params walletAddress
          *
@@ -38,7 +38,7 @@ public class CheckBalanceActivity extends AppCompatActivity {
                 address = "0x" + address;
             }
 
-            binanceManager.getBNBBalance(address)
+            binanceManager.getBNBBalance(address, this)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(balance -> {
