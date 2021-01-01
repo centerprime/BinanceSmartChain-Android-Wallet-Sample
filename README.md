@@ -1,4 +1,4 @@
-# BSC-Wallet-Android-Sample
+# Binance SmartChain Android Wallet Sample
 
 ## Overview 
 
