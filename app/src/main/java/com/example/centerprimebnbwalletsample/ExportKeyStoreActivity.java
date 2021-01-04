@@ -27,19 +27,23 @@ public class ExportKeyStoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_export_keystore);
 
-        /**
-         * Using this getKeyStore function user can get keyStore of provided walletAddress.
-         *
-         * @params WalletAddress, Context
-         *
-         * @return keyStore
-         */
-
         BinanceManager binanceManager = BinanceManager.getInstance();
+        /**
+         * @param infura - Initialize infura
+         */
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
       //  binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
 
         binding.button.setOnClickListener(v -> {
+
+            /**
+             * Using this getKeyStore function user can get keyStore of provided walletAddress.
+             *
+             * @param WalletAddress - wallet address which user want to get key store
+             * @param Context - activity context
+             *
+             * @return if the function is completed successfully returns keyStore JSON file or error name
+             */
             String walletAddress = "";
             if (!TextUtils.isEmpty(binding.address.getText().toString())) {
                 walletAddress = binding.address.getText().toString();
@@ -51,8 +55,9 @@ public class ExportKeyStoreActivity extends AppCompatActivity {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(keystore -> {
-
-
+                        /**
+                         * if function successfully completes result can be caught in this block
+                         */
                         binding.keystoreT.setVisibility(View.VISIBLE);
                         binding.copy.setVisibility(View.VISIBLE);
                         binding.keystoreT.setText(keystore);
@@ -60,6 +65,9 @@ public class ExportKeyStoreActivity extends AppCompatActivity {
 
 
                     }, error -> {
+                        /**
+                         * if function fails error can be catched in this block
+                         */
                         Toast.makeText(this, "Please insert valid wallet address", Toast.LENGTH_SHORT).show();
                     });
         });

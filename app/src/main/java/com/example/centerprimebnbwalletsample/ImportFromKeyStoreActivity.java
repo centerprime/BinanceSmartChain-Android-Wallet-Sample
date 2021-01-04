@@ -23,31 +23,39 @@ public class ImportFromKeyStoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_import_keystore);
 
-        /**
-         * Using this importFromKeystore function you can import wallet of provided keystore.
-         *
-         * @params keystore, password, Context
-         *
-         * @return walletAddress
-         */
-
         BinanceManager binanceManager = BinanceManager.getInstance();
+        /**
+         * @param infura - Initialize infura
+         */
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
        // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
 
         binding.importBtn.setOnClickListener(v -> {
+            /**
+             * Using this importFromKeyStore function user can import his wallet from keystore.
+             *
+             * @param keystore - keystore JSON file
+             * @param password - password of provided keystore
+             * @param Context - activity context
+             *
+             * @return walletAddress
+             */
             String password = binding.password.getText().toString();
             String keystore = binding.keystoreT.getText().toString();
             binanceManager.importFromKeystore(keystore, password, this)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(walletAddress -> {
-
+                        /**
+                         * if function successfully completes result can be caught in this block
+                         */
                         binding.walletAddress.setText("0x" + walletAddress);
                         binding.copy.setVisibility(View.VISIBLE);
-                        // Toast.makeText(this, "Wallet Address : " + walletAddress, Toast.LENGTH_SHORT).show();
 
                     }, error -> {
+                        /**
+                         * if function fails error can be caught in this block
+                         */
                         Toast.makeText(this, error.getMessage(), Toast.LENGTH_SHORT).show();
                     });
         });

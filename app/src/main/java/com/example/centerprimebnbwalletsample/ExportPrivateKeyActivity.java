@@ -23,19 +23,24 @@ public class ExportPrivateKeyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_export_private_key);
 
-        /**
-         * Using this exportPrivateKey function user can export walletAddresses privateKey.
-         *
-         * @params walletAddress, password, Context
-         *
-         * @return privateKey
-         */
-
         BinanceManager binanceManager = BinanceManager.getInstance();
+        /**
+         * @param infura - Initialize infura
+         */
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
-      //  binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
+      //  binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545"); // for test net
 
         binding.button.setOnClickListener(v -> {
+
+            /**
+             * Using this exportPrivateKey function user can export walletAddresses privateKey.
+             *
+             * @param walletAddress
+             * @param password - password of provided wallet address
+             * @param Context - activity context
+             *
+             * @return privateKey
+             */
 
             String walletAddress = binding.address.getText().toString();
             if(walletAddress.startsWith("0x")){
@@ -46,12 +51,17 @@ public class ExportPrivateKeyActivity extends AppCompatActivity {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(privatekey -> {
-
+                        /**
+                         * if function successfully completes result can be caught in this block
+                         */
                         binding.privateKey.setText(privatekey);
 
                         binding.copy.setVisibility(View.VISIBLE);
 
                     }, error -> {
+                        /**
+                         * if function fails error can be caught in this block
+                         */
                         Toast.makeText(this, error.getMessage(), Toast.LENGTH_SHORT).show();
                     });
         });

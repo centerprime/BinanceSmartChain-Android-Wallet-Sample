@@ -28,6 +28,15 @@
             android:layout_marginEnd="20dp"
             android:hint="Password of your wallet address" />
 
+        <EditText
+            android:id="@+id/contractAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Enter contract address" />
+
 
         <TextView
             android:id="@+id/balanceTxt"

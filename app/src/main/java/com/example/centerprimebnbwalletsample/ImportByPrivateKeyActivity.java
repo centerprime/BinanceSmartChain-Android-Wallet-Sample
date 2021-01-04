@@ -23,31 +23,36 @@ public class ImportByPrivateKeyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_import_private_key);
 
-        /**
-         * Using this importFromPrivateKey function user can import his wallet from its private key.
-         *
-         * @params privateKey, Context
-                *
-         * @return walletAddress
-         */
-
         BinanceManager binanceManager = BinanceManager.getInstance();
+        /**
+         * @param infura - Initialize infura
+         */
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
-       // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
+       // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545"); // for test net
 
         binding.checkBtn.setOnClickListener(v -> {
+            /**
+             * Using this importFromPrivateKey function user can import his wallet from its private key.
+             *
+             * @param privateKey - private key of wallet address
+             * @param Context - activity context
+             *
+             * @return walletAddress
+             */
             String privateKey = binding.privateKey.getText().toString();
             binanceManager.importFromPrivateKey(privateKey, this)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(walletAddress -> {
-
+                        /**
+                         * if function successfully completes result can be caught in this block
+                         */
                         binding.address.setText("0x" + walletAddress);
                         binding.copyBtn.setVisibility(View.VISIBLE);
-
-                        //  Toast.makeText(this, "Wallet Address : " + walletAddress, Toast.LENGTH_SHORT).show();
-
                     }, error -> {
+                        /**
+                         * if function fails error can be caught in this block
+                         */
                         Toast.makeText(this, error.getMessage(), Toast.LENGTH_SHORT).show();
                     });
         });

@@ -24,17 +24,12 @@ public class CreateWalletActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_create_wallet);
 
-        /**
-         * Using this createWallet function user can create a wallet.
-         *
-         * @params password, Context
-         *
-         * @return walletAddress
-         */
-
         BinanceManager binanceManager = BinanceManager.getInstance();
+        /**
+         * @param infura - Initialize infura
+         */
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
-      //  binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
+      //  binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545"); // for test net
 
         binding.createWallet.setOnClickListener(v -> {
             if(!TextUtils.isEmpty(binding.password.getText().toString())
@@ -43,16 +38,29 @@ public class CreateWalletActivity extends AppCompatActivity {
                     && binding.password.getText().toString().trim().length() >= 6
                     && binding.confirmPassword.getText().toString().trim().length() >= 6) {
 
+                /**
+                 * Using this createWallet function user can create a wallet.
+                 *
+                 * @param password - must be provided password to wallet address
+                 * @param Context - activity context
+                 *
+                 * @return walletAddress
+                 */
+
                 binanceManager.createWallet(binding.password.getText().toString(), this)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(wallet -> {
-
+                            /**
+                             * if function successfully completes result can be caught in this block
+                             */
                             binding.address.setText("0x" + wallet.getAddress());
-
                             binding.copy.setVisibility(View.VISIBLE);
 
                         }, error -> {
+                            /**
+                             * if function fails error can be catched in this block
+                             */
                             System.out.println(error);
                         });
             } else {
