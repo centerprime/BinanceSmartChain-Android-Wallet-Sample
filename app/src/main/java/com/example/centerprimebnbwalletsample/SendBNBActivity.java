@@ -68,6 +68,7 @@ public class SendBNBActivity extends AppCompatActivity {
                              * if function successfully completes result can be caught in this block
                              */
                             Toast.makeText(this, "TX : " + tx, Toast.LENGTH_SHORT).show();
+                            binding.result.setText(tx);
 
                         }, error -> {
                             /**

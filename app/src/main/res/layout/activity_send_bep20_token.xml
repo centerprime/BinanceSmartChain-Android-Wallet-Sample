@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="100dp"
+            android:hint="Enter your wallet address"
             android:layout_marginEnd="20dp"
             android:textColor="@color/black" />
 
@@ -84,6 +85,15 @@
             android:layout_marginEnd="20dp"
             android:hint="Enter receiver wallet address"
             android:textColor="@color/black" />
+        <EditText
+            android:id="@+id/contractAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Enter contract address"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/result"
@@ -91,15 +101,24 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:textColor="#FF0000" />
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/sendERCToken"
-            android:layout_width="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/button_1_12"
+            android:textColor="@color/white"
+            android:layout_marginRight="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Send ERC Token" />
+            android:text="Send BEP20 Token" />
 
 
     </LinearLayout>

@@ -58,7 +58,7 @@ public class SendBEP20TokenActivity extends AppCompatActivity {
                 BigInteger gasLimit = new BigInteger(binding.gasLimit.getText().toString());
                 BigDecimal tokenAmount = new BigDecimal(binding.tokenAmount.getText().toString().trim());
                 String receiverAddress = binding.receiverAddress.getText().toString().trim();
-                String erc20TokenContractAddress = "TOKEN CONTRACT ADDRESS";
+                String erc20TokenContractAddress = binding.contractAddress.getText().toString().trim();
 
 
                 binanceManager.sendToken(walletAddress, password, gasPrice, gasLimit, tokenAmount, receiverAddress, erc20TokenContractAddress, this)
@@ -69,7 +69,7 @@ public class SendBEP20TokenActivity extends AppCompatActivity {
                             /**
                              * if function successfully completes result can be caught in this block
                              */
-
+                            binding.result.setText(tx);
                             Toast.makeText(this, "TX : " + tx, Toast.LENGTH_SHORT).show();
 
                         }, error -> {

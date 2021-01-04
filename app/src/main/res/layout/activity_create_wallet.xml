@@ -117,8 +117,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/copy"
                     android:layout_gravity="center"
+                    android:background="@drawable/button_1_12"
                     android:text="copy"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:visibility="invisible"/>
 
                 <View

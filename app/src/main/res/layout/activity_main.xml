@@ -181,7 +181,7 @@
                     android:textSize="14dp"
                     android:elevation="10dp"
                     android:textStyle="bold"
-                    android:text="Check Token Balance" />
+                    android:text="Check BEP20 Token Balance" />
 
                 <Button
                     android:id="@+id/sendBNB"
@@ -205,7 +205,7 @@
                     android:textSize="14dp"
                     android:elevation="10dp"
                     android:textStyle="bold"
-                    android:text="Send Ethereum Token" />
+                    android:text="Send BEP20 Token" />
 
 
 
