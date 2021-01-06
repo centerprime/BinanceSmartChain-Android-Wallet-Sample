@@ -58,10 +58,10 @@ public class SendBEP20TokenActivity extends AppCompatActivity {
                 BigInteger gasLimit = new BigInteger(binding.gasLimit.getText().toString().trim());
                 BigDecimal tokenAmount = new BigDecimal(binding.tokenAmount.getText().toString().trim());
                 String receiverAddress = binding.receiverAddress.getText().toString().trim();
-                String erc20TokenContractAddress = binding.contractAddress.getText().toString().trim();
+                String bep20TokenContractAddress = binding.contractAddress.getText().toString().trim();
 
 
-                binanceManager.sendToken(walletAddress, password, gasPrice, gasLimit, tokenAmount, receiverAddress, erc20TokenContractAddress, this)
+                binanceManager.sendToken(walletAddress, password, gasPrice, gasLimit, tokenAmount, receiverAddress, bep20TokenContractAddress, this)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(tx -> {
