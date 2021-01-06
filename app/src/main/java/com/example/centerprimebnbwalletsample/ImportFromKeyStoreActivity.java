@@ -40,7 +40,7 @@ public class ImportFromKeyStoreActivity extends AppCompatActivity {
              *
              * @return walletAddress
              */
-            String password = binding.password.getText().toString();
+            String password = binding.password.getText().toString().trim();
             String keystore = binding.keystoreT.getText().toString();
             binanceManager.importFromKeystore(keystore, password, this)
                     .subscribeOn(Schedulers.io())

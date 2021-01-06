@@ -47,7 +47,7 @@ public class CreateWalletActivity extends AppCompatActivity {
                  * @return walletAddress
                  */
 
-                binanceManager.createWallet(binding.password.getText().toString(), this)
+                binanceManager.createWallet(binding.password.getText().toString().trim(), this)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(wallet -> {

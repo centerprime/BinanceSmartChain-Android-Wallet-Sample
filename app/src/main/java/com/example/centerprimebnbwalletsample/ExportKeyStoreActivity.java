@@ -46,7 +46,7 @@ public class ExportKeyStoreActivity extends AppCompatActivity {
              */
             String walletAddress = "";
             if (!TextUtils.isEmpty(binding.address.getText().toString())) {
-                walletAddress = binding.address.getText().toString();
+                walletAddress = binding.address.getText().toString().trim();
             } else {
                 Toast.makeText(this, "Enter wallet address", Toast.LENGTH_SHORT).show();
             }

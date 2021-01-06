@@ -53,10 +53,10 @@ public class SendBNBActivity extends AppCompatActivity {
                  * @return if sending completes successfully the function returns transactionHash or returns error name
                  */
 
-                String walletAddress = binding.address.getText().toString();
-                String password = binding.password.getText().toString();
+                String walletAddress = binding.address.getText().toString().trim();
+                String password = binding.password.getText().toString().trim();
                 BigInteger gasPrice = new BigInteger("30000000000");
-                BigInteger gasLimit = new BigInteger(binding.gasLimit.getText().toString());
+                BigInteger gasLimit = new BigInteger(binding.gasLimit.getText().toString().trim());
                 BigDecimal bnbAmount = new BigDecimal(binding.bnbAmount.getText().toString().trim());
                 String receiverAddress = binding.receiverAddress.getText().toString().trim();
 

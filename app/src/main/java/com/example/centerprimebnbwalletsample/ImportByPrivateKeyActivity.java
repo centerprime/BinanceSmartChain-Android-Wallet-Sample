@@ -39,7 +39,7 @@ public class ImportByPrivateKeyActivity extends AppCompatActivity {
              *
              * @return walletAddress
              */
-            String privateKey = binding.privateKey.getText().toString();
+            String privateKey = binding.privateKey.getText().toString().trim();
             binanceManager.importFromPrivateKey(privateKey, this)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())

@@ -30,7 +30,7 @@ public class SendBEP20TokenActivity extends AppCompatActivity {
          */
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
         //binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545"); // for test net
-        binding.sendERCToken.setOnClickListener(v -> {
+        binding.sendBEPToken.setOnClickListener(v -> {
 
             if (!TextUtils.isEmpty(binding.address.getText().toString().trim())
                     && !TextUtils.isEmpty(binding.tokenAmount.getText().toString().trim())
@@ -52,10 +52,10 @@ public class SendBEP20TokenActivity extends AppCompatActivity {
                  * @return if sending token completes successfully the function returns transactionHash or returns error name
                  */
 
-                String walletAddress = binding.address.getText().toString();
-                String password = binding.password.getText().toString();
+                String walletAddress = binding.address.getText().toString().trim();
+                String password = binding.password.getText().toString().trim();
                 BigInteger gasPrice = new BigInteger("30000000000");
-                BigInteger gasLimit = new BigInteger(binding.gasLimit.getText().toString());
+                BigInteger gasLimit = new BigInteger(binding.gasLimit.getText().toString().trim());
                 BigDecimal tokenAmount = new BigDecimal(binding.tokenAmount.getText().toString().trim());
                 String receiverAddress = binding.receiverAddress.getText().toString().trim();
                 String erc20TokenContractAddress = binding.contractAddress.getText().toString().trim();

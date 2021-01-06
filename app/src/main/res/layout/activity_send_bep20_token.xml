@@ -106,7 +106,7 @@
             android:layout_weight="1"/>
 
         <Button
-            android:id="@+id/sendERCToken"
+            android:id="@+id/sendBEPToken"
             android:layout_marginBottom="40dp"
             android:background="@drawable/button_1_12"
             android:textColor="@color/white"

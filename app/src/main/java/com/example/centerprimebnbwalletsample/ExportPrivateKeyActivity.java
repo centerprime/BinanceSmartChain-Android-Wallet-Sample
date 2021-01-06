@@ -42,7 +42,7 @@ public class ExportPrivateKeyActivity extends AppCompatActivity {
              * @return privateKey
              */
 
-            String walletAddress = binding.address.getText().toString();
+            String walletAddress = binding.address.getText().toString().trim();
             if(walletAddress.startsWith("0x")){
                 walletAddress = walletAddress.substring(2);
             }
