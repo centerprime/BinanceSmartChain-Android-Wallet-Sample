@@ -9,7 +9,9 @@ This app demonstrates wallet features which contains examples of:
   - Export Keystore
   - Export Private Key
   - Check Balance
+  - Check BEP20 Token Balance
   - Send BNB 
+  - Send BEP20 Token 
 
 
 ## Getting Started 
