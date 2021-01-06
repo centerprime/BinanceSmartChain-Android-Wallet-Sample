@@ -20,4 +20,4 @@ This app demonstrates wallet features which contains examples of:
 - Build and Run this application on Android Studio. 
 
 ### 2. Screenshots
-[![BNB-main.jpg](https://i.postimg.cc/W4FD62Vb/BNB-main.jpg)](https://postimg.cc/qtrMpHg9)
+[![BNB-main.jpg](https://i.postimg.cc/RVdfR39q/BNB-main.jpg)](https://postimg.cc/jLWLqSDr)
