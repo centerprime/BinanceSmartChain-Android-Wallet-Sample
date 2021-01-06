@@ -41,9 +41,9 @@ public class CheckBEP20TokenBalanceActivity extends AppCompatActivity {
 
                 String walletAddress = binding.address.getText().toString().trim();
                 String password = binding.walletPassword.getText().toString().trim();
-                String erc20TokenContractAddress = binding.contractAddress.getText().toString().trim();
+                String bep20TokenContractAddress = binding.contractAddress.getText().toString().trim();
 
-                binanceManager.getTokenBalance(walletAddress, password, erc20TokenContractAddress, this)
+                binanceManager.getTokenBalance(walletAddress, password, bep20TokenContractAddress, this)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(balance -> {
