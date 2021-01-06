@@ -69,7 +69,6 @@
                 android:hint="BNB amount"
                 android:inputType="numberDecimal"
                 android:paddingTop="3dp"
-                android:paddingBottom="3dp"
                 android:textColor="@color/black" />
 
 

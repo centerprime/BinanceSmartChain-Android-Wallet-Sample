@@ -25,7 +25,7 @@ public class CheckBalanceActivity extends AppCompatActivity {
         /**
          * @param infura - Initialize infura
          */
-        //binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545"); // for test net
+       // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545"); // for test net
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
         binding.checkBtn.setOnClickListener(v -> {
             /**

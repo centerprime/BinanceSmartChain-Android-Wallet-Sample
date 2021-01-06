@@ -32,7 +32,7 @@ public class ExportKeyStoreActivity extends AppCompatActivity {
          * @param infura - Initialize infura
          */
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
-      //  binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545");
+      //  binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545"); //for test net
 
         binding.button.setOnClickListener(v -> {
 
@@ -51,7 +51,7 @@ public class ExportKeyStoreActivity extends AppCompatActivity {
                 Toast.makeText(this, "Enter wallet address", Toast.LENGTH_SHORT).show();
             }
 
-            binanceManager.getKeyStore(walletAddress, this)
+            binanceManager.exportKeyStore(walletAddress, this)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(keystore -> {

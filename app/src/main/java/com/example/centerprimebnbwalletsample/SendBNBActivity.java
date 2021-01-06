@@ -31,7 +31,7 @@ public class SendBNBActivity extends AppCompatActivity {
          * @param infura - Initialize infura
          */
         binanceManager.init("https://bsc-dataseed1.binance.org:443");
-        //binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545"); // for test net
+       // binanceManager.init("https://data-seed-prebsc-1-s1.binance.org:8545"); // for test net
 
         binding.sendBNB.setOnClickListener(v -> {
             if (!TextUtils.isEmpty(binding.address.getText().toString().trim())

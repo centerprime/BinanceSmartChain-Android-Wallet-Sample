@@ -136,10 +136,10 @@
                     android:layout_marginRight="24dp"
                     android:layout_marginBottom="40dp"
                     android:background="@drawable/button_1_12"
-                    android:text="Create Eth Wallet Address"
+                    android:text="Create Wallet"
                     android:textColor="@color/white"
                     android:textSize="14dp"
-                    android:textStyle="bold" />
+                    />
             </LinearLayout>
         </ScrollView>
 
