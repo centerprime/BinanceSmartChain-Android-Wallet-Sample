@@ -9,7 +9,7 @@ This app demonstrates wallet features which contains examples of:
   - [Import Wallet By Keystore](#import-wallet-by-keystore)
   - [Import Wallet By Private Key](#import-wallet-by-private-key)
   - [Check Balance](#check-balance)
-  - [Check BEP20 Token Balance](#check_bep20-token-balance)
+  - [Check BEP20 Token Balance](#check-bep20-token-balance)
   - [Send BNB](#send-bnb)
   - [Send BEP20 Token](#send-bep20-token)
 
