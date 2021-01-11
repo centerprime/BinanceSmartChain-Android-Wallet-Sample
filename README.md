@@ -22,7 +22,33 @@ This app demonstrates wallet features which contains examples of:
 - Build and Run this application on Android Studio. 
 
 ### 2. Screenshots
-[![BNB-main.jpg](https://i.postimg.cc/RVdfR39q/BNB-main.jpg)](https://postimg.cc/jLWLqSDr)
 
 #### Main Screen
 <img src="https://centerprime.technology/images/github/binance smart chain/main_screen.png">
+
+#### Create Wallet 
+<img src="https://centerprime.technology/images/github/binance smart chain/create_wallet.png">
+
+#### Export Keystore
+<img src="https://centerprime.technology/images/github/binance smart chain/export_keystore.png">
+
+#### Export Private Key
+<img src="https://centerprime.technology/images/github/binance smart chain/export_private_key.png">
+
+#### Import Wallet By Keystore
+<img src="https://centerprime.technology/images/github/binance smart chain/import_wallet_by_keystore.png">
+
+#### Import Wallet By Private Key
+<img src="https://centerprime.technology/images/github/binance smart chain/import_wallet_by_private_key.png"> 
+
+#### Check Balance
+<img src="https://centerprime.technology/images/github/binance smart chain/check_balance.png">  
+
+#### Check BEP20 Token Balance
+<img src="https://centerprime.technology/images/github/binance smart chain/check_token_balance.png">  
+
+#### Send BNB
+<img src="https://centerprime.technology/images/github/binance smart chain/send_bnb.png">
+
+#### Send BEP20 Token 
+<img src="https://centerprime.technology/images/github/binance smart chain/send_bep20_token.png"> 
