@@ -3,15 +3,15 @@
 ## Overview 
 
 This app demonstrates wallet features which contains examples of: 
-  - Create Wallet
-  - Import Wallet By Keystore
-  - Import Wallet By Private Key
-  - Export Keystore
-  - Export Private Key
-  - Check Balance
-  - Check BEP20 Token Balance
-  - Send BNB 
-  - Send BEP20 Token 
+  - [Create Wallet](#create-wallet)
+  - [Export Keystore](#export-keystore)
+  - [Export Private Key](#export-private-key)
+  - [Import Wallet By Keystore](#import-wallet-by-keystore)
+  - [Import Wallet By Private Key](#import-wallet-by-private-key)
+  - [Check Balance](#check-balance)
+  - [Check BEP20 Token Balance](#check_bep20-token-balance)
+  - [Send BNB](#send-bnb)
+  - [Send BEP20 Token](#send-bep20-token)
 
 
 ## Getting Started 
@@ -23,3 +23,6 @@ This app demonstrates wallet features which contains examples of:
 
 ### 2. Screenshots
 [![BNB-main.jpg](https://i.postimg.cc/RVdfR39q/BNB-main.jpg)](https://postimg.cc/jLWLqSDr)
+
+#### Main Screen
+<img src="https://centerprime.technology/images/github/binance smart chain/main_screen.png">
